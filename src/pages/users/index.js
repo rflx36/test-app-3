@@ -60,36 +60,4 @@ export default function Users() {
         </div>
     )
 
-    if (isLoading) {
-        return (
-            <div className="w-[100vw] h-[100vh] grid place-content-center">
-                <div className="w-[900px] skeleton h-[500px]">
-
-                </div>
-            </div>
-        )
-    }
-
-
-
-
-    if (error) {
-        return <div>{error}</div>
-    }
-    return (
-        <>
-            <h1>Users</h1>
-            {JSON.stringify(users)}
-            <ul>
-                {(users &&
-                    users.map((users) => (
-                        <li key={users._id}>
-                            {users.name} - {users.email} - {users.age}
-                        </li>
-                    ))
-                )
-                }
-            </ul>
-        </>
-    )
 }

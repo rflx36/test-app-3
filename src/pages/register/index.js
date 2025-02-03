@@ -19,7 +19,11 @@ export default function Register() {
 
 
         const data = await response.json();
-        if (data.message === "User created") {
+
+        if (data.error === "Email already in use"){
+            alert("Email already in use");
+        }
+        else if (data.message === "User created") {
             alert("User created successfully!");
         }
         else {
